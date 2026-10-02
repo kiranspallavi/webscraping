@@ -16,7 +16,7 @@ soup = BeautifulSoup(response.text, "html.parser")
 for h in soup.find_all("h2"):
     print(h.text)
 
-a=input("What Section do you want? ")
+a=input("What Section do you want...? ")
 a=str.istitle(a)
 
 

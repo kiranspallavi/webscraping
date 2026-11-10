@@ -17,13 +17,12 @@ for h in soup.find_all("h2"):
     print(h.text)
 
 a=input("What Section do you want...? ")
-a=str.istitle(a)
 
-
-head=soup.find("h2",id=a)
-
-for p in head.find_all_next():
-    if p.name=="p":
-        print(p.get_text(strip=True))
-    if p.name=="h2":
-        break
+for h in soup.find_all("h2"):
+    if a.lower()==h.get_text(strip=True).lower():
+        print(h.text)
+        for p in h.find_all_next():
+            if p.name=="p":
+                print(p.get_text(strip=True))
+            if p.name=="h2":
+                break
